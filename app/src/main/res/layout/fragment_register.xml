@@ -8,24 +8,12 @@
 
     <!-- TODO: Update blank fragment layout -->
     <EditText
-        android:id="@+id/registerEtFname"
+        android:id="@+id/registerEtUname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Firstname"
+        android:hint="Enter Username"
         android:layout_margin="20dp"
         />
-    <EditText
-        android:id="@+id/registerEtLname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Lastname"
-        android:layout_margin="20dp"/>
-    <EditText
-        android:id="@+id/registerEtComaanyName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Company Name"
-        android:layout_margin="20dp" />
     <EditText
         android:id="@+id/registerEtEmail"
         android:layout_width="match_parent"
@@ -39,6 +27,21 @@
         android:hint="Enter Password"
         android:layout_margin="20dp"
         android:inputType="textPassword"/>
+
+    <EditText
+        android:id="@+id/registerEtAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Age"
+        android:layout_margin="20dp" />
+    <EditText
+        android:id="@+id/registerEtAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Address"
+        android:layout_margin="20dp" />
+
+
     <Button
         android:id="@+id/registerBtnRegister"
         android:layout_width="match_parent"
