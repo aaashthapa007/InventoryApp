@@ -8,8 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.inventoryapp.R;
+import com.example.inventoryapp.models.Response;
+import com.example.inventoryapp.models.User;
+
+import Api.Url;
+import Api.UserApi;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,8 +39,25 @@ public class Login extends Fragment {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Lemail = editTextLoginEmail.getText().toString();
-                String Lpassword = editTextLoginPassowrd.getText().toString();
+
+                String email = editTextLoginEmail.getText().toString();
+                String password = editTextLoginPassowrd.getText().toString();
+
+                User user = new User(email,password);
+                UserApi userApi = Url.getInstance().create(UserApi.class);
+                Call<Response> responseCall = userApi.login(user);
+                responseCall.enqueue(new Callback<Response>() {
+                    @Override
+                    public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                        Toast.makeText(getContext(), "login Successful", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailure(Call<Response> call, Throwable t) {
+                        Toast.makeText(getContext(), "Invalid"+t, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
 
             }
         });
