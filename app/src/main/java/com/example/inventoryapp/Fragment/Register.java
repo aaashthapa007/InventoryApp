@@ -14,8 +14,8 @@ import com.example.inventoryapp.R;
 import com.example.inventoryapp.models.Response;
 import com.example.inventoryapp.models.User;
 
-import Api.Url;
-import Api.UserApi;
+import com.example.inventoryapp.Api.Url;
+import com.example.inventoryapp.Api.UserApi;
 import retrofit2.Call;
 import retrofit2.Callback;
 

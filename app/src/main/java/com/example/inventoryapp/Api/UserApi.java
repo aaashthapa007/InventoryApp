@@ -1,4 +1,4 @@
-package Api;
+package com.example.inventoryapp.Api;
 
 import com.example.inventoryapp.models.Response;
 import com.example.inventoryapp.models.User;

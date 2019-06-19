@@ -1,8 +1,10 @@
 package com.example.inventoryapp.Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +14,9 @@ import android.widget.Toast;
 
 import com.example.inventoryapp.R;
 import com.example.inventoryapp.models.Response;
-import com.example.inventoryapp.models.User;
 
-import Api.Url;
-import Api.UserApi;
+import com.example.inventoryapp.Api.Url;
+import com.example.inventoryapp.Api.UserApi;
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -39,9 +40,10 @@ public class Login extends Fragment {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!validate()) return;
 
-                String email = editTextLoginEmail.getText().toString();
-                String password = editTextLoginPassowrd.getText().toString();
+                String email = editTextLoginEmail.getText().toString().trim();
+                String password = editTextLoginPassowrd.getText().toString().trim();
 
 
                 UserApi userApi = Url.getInstance().create(UserApi.class);
@@ -49,7 +51,12 @@ public class Login extends Fragment {
                 responseCall.enqueue(new Callback<Response>() {
                     @Override
                     public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                        Toast.makeText(getContext(), "login Successful", Toast.LENGTH_SHORT).show();
+                        if (response.body().isStatus()==true){
+                            Toast.makeText(getContext(), "login Successful!", Toast.LENGTH_SHORT).show();
+                          //  startActivity(new Intent(Login.this,DashboardActivity.class));
+                        }else{
+                            Toast.makeText(getContext(), "login Failed!!", Toast.LENGTH_SHORT).show();
+                        }
                     }
 
                     @Override
@@ -62,7 +69,24 @@ public class Login extends Fragment {
             }
         });
 
+
+
         return v;
+    }
+    private boolean validate(){
+        if (TextUtils.isEmpty(editTextLoginEmail.getText().toString())){
+            editTextLoginEmail.setError("Please enter valid email");
+            editTextLoginEmail.requestFocus();
+            return false;
+        }else if (TextUtils.isEmpty(editTextLoginPassowrd.getText().toString())){
+            editTextLoginPassowrd.setError("Password wrong");
+            editTextLoginPassowrd.requestFocus();
+            return false;
+        }
+        return true;
+    }
+    public void openRegisterActivity(View view){
+
     }
 
 }
