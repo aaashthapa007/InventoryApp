@@ -5,6 +5,7 @@ import com.example.inventoryapp.models.User;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.POST;
 
 public interface UserApi {
@@ -13,5 +14,5 @@ public interface UserApi {
     Call<Response> register (@Body User user);
 
     @POST("login")
-    Call<Response> login (@Body User user);
+    Call<Response> login (@Field("email")String email, @Field("password")String password);
 }

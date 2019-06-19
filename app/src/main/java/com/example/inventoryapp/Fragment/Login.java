@@ -43,9 +43,9 @@ public class Login extends Fragment {
                 String email = editTextLoginEmail.getText().toString();
                 String password = editTextLoginPassowrd.getText().toString();
 
-                User user = new User(email,password);
+
                 UserApi userApi = Url.getInstance().create(UserApi.class);
-                Call<Response> responseCall = userApi.login(user);
+                Call<Response> responseCall = userApi.login(email,password);
                 responseCall.enqueue(new Callback<Response>() {
                     @Override
                     public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
