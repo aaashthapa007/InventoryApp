@@ -4,50 +4,127 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.Register"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#3b5998">
 
     <!-- TODO: Update blank fragment layout -->
-    <EditText
-        android:id="@+id/registerEtUname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Username"
-        android:layout_margin="20dp"
-        />
-    <EditText
-        android:id="@+id/registerEtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Email"
-        android:layout_margin="20dp" />
-    <EditText
-        android:id="@+id/registerEtPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Password"
-        android:layout_margin="20dp"
-        android:inputType="textPassword"/>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="67dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo" />
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="#e6e6ff"
+              android:padding="8dp"
 
-    <EditText
-        android:id="@+id/registerEtAge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Age"
-        android:layout_margin="20dp" />
-    <EditText
-        android:id="@+id/registerEtAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Address"
-        android:layout_margin="20dp" />
+              >
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Username"
+                  android:fontFamily="sans-serif-condensed-medium"
+                  android:layout_marginTop="10dp"
+                  android:textColor="#A9A9A9"
+                  />
+            <EditText
+                android:id="@+id/registerEtUname"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:paddingLeft="8dp"
+                android:background="@drawable/drawable_edittext"
+                android:drawableLeft="@drawable/ic_person"
+                android:hint="Enter Username"
+                android:layout_margin="10dp"
+                />
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Email"
+                  android:fontFamily="sans-serif-condensed-medium"
+                  android:layout_marginTop="10dp"
+                  android:textColor="#A9A9A9"
+                  />
+                <EditText
+                    android:id="@+id/registerEtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:paddingLeft="8dp"
+                    android:hint="Enter Email"
+                    android:background="@drawable/drawable_edittext"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:layout_margin="10dp" />
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Password"
+                  android:fontFamily="sans-serif-condensed-medium"
+                  android:layout_marginTop="10dp"
+                  android:textColor="#A9A9A9"
+                  />
+                    <EditText
+                    android:id="@+id/registerEtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:paddingLeft="8dp"
+                    android:hint="Enter Password"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/drawable_edittext"
+                    android:drawableLeft="@drawable/ic_password"
+                    android:inputType="textPassword"/>
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Age"
+                  android:fontFamily="sans-serif-condensed-medium"
+                  android:layout_marginTop="10dp"
+                  android:textColor="#A9A9A9"
+                  />
+
+                <EditText
+                    android:id="@+id/registerEtAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:paddingLeft="8dp"
+                    android:hint="Enter Age"
+                    android:background="@drawable/drawable_edittext"
+                    android:drawableLeft="@drawable/ic_age"
+                    android:layout_margin="10dp" />
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Address"
+                  android:fontFamily="sans-serif-condensed-medium"
+                  android:layout_marginTop="10dp"
+                  android:textColor="#A9A9A9"
+                  />
+                <EditText
+                    android:id="@+id/registerEtAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:paddingLeft="8dp"
+                    android:hint="Enter Age"
+                    android:background="@drawable/drawable_edittext"
+                    android:drawableLeft="@drawable/ic_address"
+                    android:layout_margin="10dp" />
 
 
-    <Button
-        android:id="@+id/registerBtnRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        />
+                <Button
+                android:id="@+id/registerBtnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/drawable_button"
+                android:text="Register"
+                />
+          </LinearLayout>
+        </android.support.v7.widget.CardView>
 
 
 

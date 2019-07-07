@@ -24,8 +24,7 @@ public class ViewPagerActivity extends AppCompatActivity {
 
         adapter.addFragment(new Login(),"Login");
         adapter.addFragment(new Register(),"Register");
-        adapter.addFragment(new Register(),"Register");
-        adapter.addFragment(new Register(),"Register");
+
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

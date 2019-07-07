@@ -57,7 +57,14 @@ public class Register extends Fragment {
                 responseCall.enqueue(new Callback<Response>() {
                     @Override
                     public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                        Toast.makeText(getContext(), "Registered", Toast.LENGTH_SHORT).show();
+                        if (response.isSuccessful()) {
+                            Toast.makeText(getContext(), "Registered", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(getContext(), "error", Toast.LENGTH_SHORT).show();
+                        }
+
+
                     }
 
                     @Override

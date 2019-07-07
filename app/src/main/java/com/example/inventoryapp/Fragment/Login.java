@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.inventoryapp.R;
+import com.example.inventoryapp.models.LoginResponse;
 import com.example.inventoryapp.models.Response;
 
 import com.example.inventoryapp.Api.Url;
@@ -47,11 +48,12 @@ public class Login extends Fragment {
 
 
                 UserApi userApi = Url.getInstance().create(UserApi.class);
-                Call<Response> responseCall = userApi.login(email,password);
-                responseCall.enqueue(new Callback<Response>() {
+                Call<LoginResponse> responseCall = userApi.login(email,password);
+                responseCall.enqueue(new Callback<LoginResponse>() {
                     @Override
-                    public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                        if (response.body().isStatus()==true){
+                    public void onResponse(Call<LoginResponse> call, retrofit2.Response<LoginResponse> response) {
+                        if (response.isSuccessful()){
+                            Url.token = response.body().getToken();
                             Toast.makeText(getContext(), "login Successful!", Toast.LENGTH_SHORT).show();
                           //  startActivity(new Intent(Login.this,DashboardActivity.class));
                         }else{
@@ -60,7 +62,7 @@ public class Login extends Fragment {
                     }
 
                     @Override
-                    public void onFailure(Call<Response> call, Throwable t) {
+                    public void onFailure(Call<LoginResponse> call, Throwable t) {
                         Toast.makeText(getContext(), "Invalid"+t, Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -85,8 +87,4 @@ public class Login extends Fragment {
         }
         return true;
     }
-    public void openRegisterActivity(View view){
-
-    }
-
 }

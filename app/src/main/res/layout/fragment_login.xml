@@ -8,14 +8,14 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center"
-    android:background="#E1D5D4D4">
+    android:background="#3b5998">
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@drawable/ic_launcher_background" />
+        android:src="@drawable/logo" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#fff"
+            android:background="#e6e6ff"
             android:padding="8dp">
 
 
@@ -44,6 +44,7 @@
                 android:text="Email"
                 android:fontFamily="sans-serif-condensed-medium"
                 android:layout_marginTop="10dp"
+                android:textColor="#A9A9A9"
                 />
 
             <EditText
@@ -61,6 +62,7 @@
                 android:text="Password"
                 android:fontFamily="sans-serif-condensed-medium"
                 android:layout_marginTop="10dp"
+                android:textColor="#A9A9A9"
                 />
 
             <EditText
@@ -79,25 +81,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/drawable_button"
                 android:text="Login" />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:layout_marginTop="6dp"
-                android:onClick="openRegisterActivity">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Don't have an account?"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Click Here!"
-                    android:textColor="#E40909"/>
-
-            </LinearLayout>
 
         </LinearLayout>
 
